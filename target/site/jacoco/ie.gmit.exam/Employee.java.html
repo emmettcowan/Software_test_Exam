@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Employee.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">calculator</a> &gt; <a href="index.source.html" class="el_package">ie.gmit.exam</a> &gt; <span class="el_source">Employee.java</span></div><h1>Employee.java</h1><pre class="source lang-java linenums">package ie.gmit.exam;
+
+public class Employee {
+
+    private String Name;
+    private String Phone;
+    private int ID;
+    private int age;
+
+<span class="fc" id="L10">    public Employee(String n, String p, int i, int a){</span>
+<span class="fc" id="L11">        setName(n);</span>
+<span class="fc" id="L12">        setPhone(p);</span>
+<span class="fc" id="L13">        setID(i);</span>
+<span class="fc" id="L14">        setAge(a);</span>
+<span class="fc" id="L15">    }</span>
+
+    public String getName() {
+<span class="fc" id="L18">        return Name;</span>
+    }
+
+    public void setName(String name) {
+<span class="fc bfc" id="L22" title="All 4 branches covered.">        if(name.length() &gt;= 3 &amp;&amp; name.length() &lt;= 25){</span>
+<span class="fc" id="L23">            this.Name = name;</span>
+        }
+        else{
+<span class="fc" id="L26">            throw new IllegalArgumentException(&quot;invalid Name&quot;);</span>
+        }
+<span class="fc" id="L28">    }</span>
+
+    public String getPhone() {
+<span class="fc" id="L31">        return Phone;</span>
+    }
+
+    public void setPhone(String phone) {
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        if(phone.length() == 8){</span>
+<span class="fc" id="L36">            this.Phone = phone;</span>
+        }
+        else{
+<span class="fc" id="L39">            throw new IllegalArgumentException(&quot;invalid Phone, should be 8 digits&quot;);</span>
+        }
+<span class="fc" id="L41">    }</span>
+
+    public int getID() {
+<span class="fc" id="L44">        return ID;</span>
+    }
+
+    public void setID(int ID) {
+<span class="fc" id="L48">        int lenght = String.valueOf(ID).length();</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if(lenght == 5){</span>
+<span class="fc" id="L50">            this.ID = ID;</span>
+        }
+        else{
+<span class="fc" id="L53">            throw new IllegalArgumentException(&quot;invalid ID, should be 5 digits&quot;);</span>
+        }
+<span class="fc" id="L55">    }</span>
+
+    public int getAge() {
+<span class="fc" id="L58">        return age;</span>
+    }
+
+    public void setAge(int age) {
+<span class="fc bfc" id="L62" title="All 2 branches covered.">        if(age &gt; 16){</span>
+<span class="fc" id="L63">            this.age = age;</span>
+        }
+        else{
+<span class="fc" id="L66">            throw new IllegalArgumentException(&quot;invalid Age, must be over 16&quot;);</span>
+        }
+<span class="fc" id="L68">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

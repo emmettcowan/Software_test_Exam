@@ -13,12 +13,12 @@ public class EmployeeList {
 
 
     public void addEmployee(Employee e){
-        if(Employees.contains(e)){
-            throw new IllegalArgumentException("Employee already exists");
+        for(int i = 0; i < Employees.size(); i++) {
+            if (Employees.get(i).getID() == e.getID()) {
+                throw new IllegalArgumentException("Employee already exists");
+            }
         }
-        else {
-            Employees.add(e);
-        }
+        Employees.add(e);
     }
 
     public int getSize(){
