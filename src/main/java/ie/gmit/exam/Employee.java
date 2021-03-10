@@ -36,7 +36,7 @@ public class Employee {
             this.Phone = phone;
         }
         else{
-            throw new IllegalArgumentException("invalid Phone");
+            throw new IllegalArgumentException("invalid Phone, should be 8 digits");
         }
     }
 
@@ -50,7 +50,7 @@ public class Employee {
             this.ID = ID;
         }
         else{
-            throw new IllegalArgumentException("invalid ID");
+            throw new IllegalArgumentException("invalid ID, should be 5 digits");
         }
     }
 
@@ -63,7 +63,7 @@ public class Employee {
             this.age = age;
         }
         else{
-            throw new IllegalArgumentException("invalid Age");
+            throw new IllegalArgumentException("invalid Age, must be over 16");
         }
     }
 }
