@@ -26,6 +26,7 @@ public class EmployeeListTest {
 
     @Test
     void testEmployeeAddFail(){
+        list1.addEmployee(e1);
         Exception e = assertThrows(IllegalArgumentException.class , ()-> list1.addEmployee(e1));
         assertEquals("Employee already exists" , e.getMessage());
     }

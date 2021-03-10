@@ -20,4 +20,8 @@ public class EmployeeList {
             Employees.add(e);
         }
     }
+
+    public int getSize(){
+        return Employees.size();
+    }
 }

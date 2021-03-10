@@ -27,6 +27,13 @@ public class EmployeeTest {
     }
 
     @Test
+    void testConstructorNameFail2(){
+        Exception e = assertThrows(IllegalArgumentException.class, ()-> new Employee("awsedrftgyhujiwkolpnbvcxza", "08922977", 12345, 21));
+        assertEquals("invalid Name" , e.getMessage());
+    }
+
+
+    @Test
     void testConstructorPhone(){
         assertEquals(e1.getPhone() ,"08922977");
     }
@@ -34,7 +41,7 @@ public class EmployeeTest {
     @Test
     void testConstructorPhoneFail(){
         Exception e = assertThrows(IllegalArgumentException.class, ()-> new Employee("Emmett", "089763", 12345, 21));
-        assertEquals("invalid Phone" , e.getMessage());
+        assertEquals("invalid Phone, should be 8 digits" , e.getMessage());
     }
 
     @Test
@@ -45,7 +52,7 @@ public class EmployeeTest {
     @Test
     void testConstructorIDFail(){
         Exception e = assertThrows(IllegalArgumentException.class, ()-> new Employee("Emmett", "08922977", 123, 21));
-        assertEquals("invalid ID" , e.getMessage());
+        assertEquals("invalid ID, should be 5 digits" , e.getMessage());
     }
 
     @Test
@@ -56,7 +63,7 @@ public class EmployeeTest {
     @Test
     void testConstructorAgeFail(){
         Exception e = assertThrows(IllegalArgumentException.class, ()-> new Employee("Emmett", "08922977", 12345, 13));
-        assertEquals("invalid Age" , e.getMessage());
+        assertEquals("invalid Age, must be over 16" , e.getMessage());
     }
 
 }
