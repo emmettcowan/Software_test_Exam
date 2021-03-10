@@ -12,4 +12,12 @@ public class EmployeeList {
     }
 
 
+    public void addEmployee(Employee e){
+        if(Employees.contains(e)){
+            throw new IllegalArgumentException("Employee already exists");
+        }
+        else {
+            Employees.add(e);
+        }
+    }
 }

@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class EmployeeListTest {
 
@@ -18,7 +19,14 @@ public class EmployeeListTest {
 
     @Test
     void testEmployeeAdd(){
+        int size = list1.getSize();
         list1.addEmployee(e1);
-        assertEquals(list1.addEmployee(e1) ,"successs");
+        assertEquals(list1.getSize() ,size + 1);
+    }
+
+    @Test
+    void testEmployeeAddFail(){
+        Exception e = assertThrows(IllegalArgumentException.class , ()-> list1.addEmployee(e1));
+        assertEquals("Employee already exists" , e.getMessage());
     }
 }
