@@ -29,4 +29,11 @@ public class EmployeeListTest {
         Exception e = assertThrows(IllegalArgumentException.class , ()-> list1.addEmployee(e1));
         assertEquals("Employee already exists" , e.getMessage());
     }
+
+    @Test
+    void testGetSize(){
+        list1.addEmployee(e1);
+        assertEquals(list1.getSize() , 1);
+    }
+
 }
